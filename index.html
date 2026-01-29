@@ -381,11 +381,65 @@
 
         .nav-siparis-wrap {
             position: relative;
+            padding: 0.35rem;
+            border-radius: 50px;
+        }
+
+        .nav-siparis-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50px;
+            background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255, 100, 0, 0.35) 0%, rgba(255, 60, 0, 0.2) 40%, rgba(200, 40, 0, 0.08) 70%, transparent 100%);
+            opacity: 0.9;
+            animation: mangal-glow 2.5s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .nav-siparis-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(255, 120, 0, 0.25) 0%, rgba(255, 60, 0, 0.15) 50%, rgba(255, 140, 0, 0.2) 100%);
+            opacity: 0.7;
+            animation: mangal-glow 2.5s ease-in-out infinite 0.4s;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes mangal-glow {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
         }
 
         .nav-siparis-btn {
             cursor: pointer;
             font-family: inherit;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(255, 100, 0, 0.35), 0 4px 15px rgba(255, 107, 0, 0.25);
+            animation: mangal-btn-glow 2.5s ease-in-out infinite;
+        }
+
+        .nav-siparis-btn:hover {
+            box-shadow: 0 0 28px rgba(255, 100, 0, 0.5), 0 0 40px rgba(255, 80, 0, 0.25), 0 4px 20px rgba(255, 107, 0, 0.3);
+        }
+
+        @keyframes mangal-btn-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 100, 0, 0.35), 0 4px 15px rgba(255, 107, 0, 0.25); }
+            50% { box-shadow: 0 0 26px rgba(255, 120, 0, 0.45), 0 0 32px rgba(255, 80, 0, 0.2), 0 4px 18px rgba(255, 107, 0, 0.3); }
+        }
+
+        .nav-siparis-btn .fa-fire {
+            margin-right: 0.3rem;
+            color: #fff;
+            filter: drop-shadow(0 0 4px rgba(255, 180, 0, 0.8));
+        }
+
+        .nav-siparis-btn .fa-shopping-bag {
+            margin-right: 0.4rem;
         }
 
         .nav-siparis-dropdown {
@@ -1726,7 +1780,7 @@
             <div class="nav-cta">
                 <div class="nav-siparis-wrap" id="navSiparisWrap">
                     <button type="button" class="btn btn-primary nav-siparis-btn" onclick="toggleSiparisDropdown(event)" aria-expanded="false" aria-haspopup="true">
-                        <i class="fas fa-shopping-bag"></i> Sipariş Ver
+                        <i class="fas fa-fire"></i> <i class="fas fa-shopping-bag"></i> Sipariş Ver
                     </button>
                     <div class="nav-siparis-dropdown" id="navSiparisDropdown">
                         <a href="https://yemek.go.link/fFmfZ" target="_blank" rel="noopener" class="nav-siparis-option nav-siparis-yemeksepeti">
