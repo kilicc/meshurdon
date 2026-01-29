@@ -595,28 +595,14 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 1;
             width: 100%;
             max-width: 100%;
             text-align: center;
             padding: 0 0.5rem;
             box-sizing: border-box;
-        }
-
-        .hero-banner-tag {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 0.3rem 0.55rem;
-            border-radius: 4px;
-            margin-bottom: 0.45rem;
-            text-shadow: 0 0 12px rgba(255, 180, 80, 0.8);
-            animation: kampanya-glow 2.5s ease-in-out infinite;
         }
 
         .hero-banner-title {
@@ -1779,7 +1765,6 @@
         <div class="hero-inner">
             <a href="#urunler" class="hero-side hero-side-left" aria-label="Tavuk İskender kampanyası">
                 <div class="hero-banner-content">
-                    <span class="hero-banner-tag">Kampanya</span>
                     <div class="hero-banner-title">Tavuk İskender</div>
                     <div class="hero-banner-desc">Özel soslu, tereyağlı lezzet. Menüde sizi bekliyor.</div>
                 </div>
@@ -1831,7 +1816,6 @@
             </div>
             <a href="#urunler" class="hero-side hero-side-right" aria-label="Pilav Üstü Döner kampanyası">
                 <div class="hero-banner-content">
-                    <span class="hero-banner-tag">Kampanya</span>
                     <div class="hero-banner-title">Pilav Üstü Döner</div>
                     <div class="hero-banner-desc">Tereyağlı pilav, bol döner. Hemen tadın.</div>
                 </div>
