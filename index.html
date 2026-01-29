@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meşhur Dönerci - Gül'ün Yeri | İzmir Menderes</title>
+    <meta name="description" content="İzmir Menderes'in en lezzetli tavuk döneri. Tavuk İskender, Dürüm Döner, Pilav Üstü Döner, Midye, Çay, Kahve, Kestane. Yemek Sepeti'nden sipariş verin!">
+    <meta name="keywords" content="döner, tavuk döner, iskender, menderes, izmir, midye, çay, kahve, kestane">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-dark: #E55A00;
+            --secondary: #2C2C2C;
+            --accent: #FFD700;
+            --rose: #E91E63;
+            --rose-light: #FF4081;
+            --white: #FFFFFF;
+            --light-bg: #FFF8F0;
+            --text-dark: #1A1A1A;
+            --text-light: #666666;
+            --gradient-warm: linear-gradient(135deg, #FF6B00 0%, #FF8C00 50%, #FFA500 100%);
+            --gradient-rose: linear-gradient(135deg, #E91E63 0%, #FF4081 100%);
+            --shadow: 0 10px 40px rgba(255, 107, 0, 0.2);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Logo Styles */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            background: url('assets/logo.png') center/cover;
+            border: 3px solid var(--primary);
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .logo-icon i {
+            display: none;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-meshur {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo-gulun-yeri {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-rose);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            text-shadow: none;
+        }
+
+        .logo-gulun-yeri::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-rose);
+            border-radius: 2px;
+        }
+
+        /* Big Logo for Hero */
+        .hero-logo-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 4rem;
+        }
+
+        .hero-logo-wrap:hover .hero-logo-cta-siparis {
+            opacity: 1;
+            transform: scale(1) translateY(-50%) translateX(calc(-100% - 95px));
+            visibility: visible;
+        }
+
+        .hero-logo-wrap:hover .hero-logo-cta-ara {
+            opacity: 1;
+            transform: scale(1) translateY(-50%) translateX(95px);
+            visibility: visible;
+        }
+
+        /* Butonlar logo dairesinin hizasında, tamamen dışarıda ve üstte */
+        .hero-logo-cta {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            transform: scale(0.4) translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+            z-index: 3;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.65rem 1.1rem;
+            border-radius: 50px;
+            white-space: nowrap;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        .hero-logo-cta-siparis {
+            background: var(--gradient-warm);
+            border: 2px solid rgba(255,255,255,0.9);
+        }
+
+        .hero-logo-cta-siparis:hover {
+            transform: scale(1.05) translateY(-50%) translateX(calc(-100% - 95px)) !important;
+            box-shadow: 0 8px 30px rgba(255, 107, 0, 0.5);
+        }
+
+        .hero-logo-cta-ara {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border: 2px solid rgba(255,255,255,0.9);
+        }
+
+        .hero-logo-cta-ara:hover {
+            transform: scale(1.05) translateY(-50%) translateX(95px) !important;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .hero-logo-cta i {
+            margin-right: 0.4rem;
+        }
+
+        .hero-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(255, 107, 0, 0.5);
+            margin-bottom: 1.5rem;
+            position: relative;
+            animation: pulse-glow 2s infinite;
+            background: url('assets/logo.png') center/cover;
+            border: 5px solid var(--primary);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 10px 40px rgba(255, 107, 0, 0.5), 0 0 0 0 rgba(255, 107, 0, 0.4); }
+            50% { box-shadow: 0 10px 60px rgba(255, 107, 0, 0.8), 0 0 0 15px rgba(255, 107, 0, 0); }
+        }
+
+        .hero-logo-icon i {
+            display: none;
+        }
+        
+        .hero-logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 2px dashed var(--accent);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-logo-text {
+            text-align: center;
+        }
+
+        .hero-meshur {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-donerci {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-gulun-yeri {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 30%, #FF6B00 60%, #E91E63 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            animation: glow-text 2s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.5));
+        }
+
+        @keyframes glow-text {
+            0% { filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.5)); }
+            100% { filter: drop-shadow(0 0 30px rgba(233, 30, 99, 0.6)); }
+        }
+
+        .hero-gulun-yeri::before {
+            content: '✿';
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            -webkit-text-fill-color: #E91E63;
+        }
+
+        .hero-gulun-yeri::after {
+            content: '✿';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            -webkit-text-fill-color: #E91E63;
+        }
+
+        .hero-divider {
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--rose), var(--primary), var(--rose), transparent);
+            margin: 1rem auto;
+            border-radius: 3px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-siparis-wrap {
+            position: relative;
+        }
+
+        .nav-siparis-btn {
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .nav-siparis-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            border: 1px solid rgba(0,0,0,0.08);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.92) translateY(-8px);
+            transform-origin: top right;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+            z-index: 1000;
+        }
+
+        .nav-siparis-wrap:hover .nav-siparis-dropdown,
+        .nav-siparis-wrap.open .nav-siparis-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+        }
+
+        .nav-siparis-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-siparis-yemeksepeti {
+            background: rgba(250, 0, 80, 0.12);
+            color: #C41E5A;
+        }
+        .nav-siparis-yemeksepeti:hover {
+            background: rgba(250, 0, 80, 0.22);
+            color: #A01848;
+        }
+
+        .nav-siparis-getir {
+            background: rgba(93, 63, 211, 0.12);
+            color: #4A2FAA;
+        }
+        .nav-siparis-getir:hover {
+            background: rgba(93, 63, 211, 0.22);
+            color: #3D2890;
+        }
+
+        .nav-siparis-telefon {
+            background: rgba(37, 211, 102, 0.12);
+            color: #128C7E;
+        }
+        .nav-siparis-telefon:hover {
+            background: rgba(37, 211, 102, 0.22);
+            color: #0D6B60;
+        }
+
+        .nav-siparis-option i {
+            font-size: 1.1rem;
+        }
+
+        .nav-siparis-logo {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-warm);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(255, 107, 0, 0.35);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            overflow: hidden;
+            padding: 6rem 0 0 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23FF6B00" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+            animation: movePattern 20s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            width: 100vw;
+            max-width: 100%;
+            min-height: calc(100vh - 6rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-side {
+            flex: 1;
+            min-width: 0;
+            min-height: 400px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-side:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-side::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 100%);
+            pointer-events: none;
+        }
+
+        .hero-side-left {
+            background-image: url('assets/hero-banner-left.jpg');
+            background-position: center center;
+        }
+
+        .hero-side-right {
+            background-image: url('assets/hero-banner-right.jpg');
+            background-position: center center;
+        }
+
+        .hero-banner-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+            padding: 0 0.5rem;
+            box-sizing: border-box;
+        }
+
+        .hero-banner-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-banner-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .hero-banner-desc {
+            font-size: 0.7rem;
+            line-height: 1.35;
+            opacity: 0.95;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0;
+            padding: 2rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .hero-promo-banner {
+            margin: 1.5rem auto 2rem;
+            max-width: 520px;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, rgba(194, 124, 47, 0.25) 0%, rgba(139, 90, 43, 0.35) 50%, rgba(101, 67, 33, 0.3) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-promo-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 55%, transparent 100%);
+            background-size: 200% 100%;
+            animation: hero-banner-shine 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes hero-banner-shine {
+            0%, 100% { background-position: 150% 0; }
+            50% { background-position: -50% 0; }
+        }
+        .hero-promo-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            border-radius: 16px 16px 0 0;
+        }
+        .hero-promo-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 0.5px;
+            margin: 0 0 0.6rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+        .hero-promo-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-promo-icons span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .hero-promo-icons span i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        .hero-promo-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-promo-tags .tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--light-bg);
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .category-title i {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .products-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-badge.popular {
+            background: #E74C3C;
+        }
+
+        .product-badge.new {
+            background: #27AE60;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-image-collage {
+            object-fit: cover;
+        }
+
+        .product-image-brand {
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-variants {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .variant-tag {
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .product-price span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Location Section */
+        .location {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 2.5rem 0 1rem;
+        }
+
+        .location .section-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .location .section-title {
+            color: var(--white);
+        }
+
+        .location .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .location-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .location-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .location-info .location-buttons {
+            grid-column: 1 / -1;
+            margin-top: 0.5rem;
+        }
+
+        .location-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .location-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-warm);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .location-card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .location-card-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .location-card-text a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .location-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .map-fullwidth {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 1.25rem;
+        }
+
+        .map-container {
+            width: 100%;
+            overflow: hidden;
+            box-shadow: none;
+            height: 520px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Order Section */
+        .order {
+            background: var(--gradient-warm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .order::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .order-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .order .section-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .order .section-title {
+            color: var(--white);
+        }
+
+        .order .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .order-platforms {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem 3rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            min-width: 200px;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .platform-icon.yemeksepeti {
+            background: linear-gradient(135deg, #FA0050 0%, #FF1744 100%);
+            color: var(--white);
+        }
+
+        .platform-icon.getir {
+            background: linear-gradient(135deg, #5D3FD3 0%, #7B68EE 100%);
+            color: var(--white);
+        }
+
+        .platform-icon.phone {
+            background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
+            color: var(--white);
+        }
+
+        .platform-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .platform-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image:first-child {
+            grid-row: span 2;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-title-wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-title-wrap::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1 / 1;
+            background: url('assets/logo.png') center/contain no-repeat;
+            opacity: 0.12;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .about-content {
+            padding: 2rem 0;
+        }
+
+        .about-images-overlap {
+            position: relative;
+            width: 100%;
+            min-height: 380px;
+            grid-template-columns: 1fr;
+        }
+
+        .about-overlap-box {
+            position: absolute;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            border: 3px solid rgba(255,255,255,0.9);
+        }
+
+        .about-overlap-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-overlap-1 {
+            width: 52%;
+            height: 52%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            transform: rotate(-4deg);
+        }
+
+        .about-overlap-2 {
+            width: 50%;
+            height: 50%;
+            left: 28%;
+            top: 12%;
+            z-index: 2;
+            transform: rotate(3deg);
+        }
+
+        .about-overlap-3 {
+            width: 50%;
+            height: 50%;
+            left: 48%;
+            top: 2%;
+            z-index: 3;
+            transform: rotate(-2deg);
+        }
+
+        .about-overlap-4 {
+            width: 48%;
+            height: 48%;
+            left: 32%;
+            top: 38%;
+            z-index: 4;
+            transform: rotate(2deg);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .about-feature-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light-bg);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin: 0 auto 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-main {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: url('assets/logo.png') center/cover;
+            border: 3px solid var(--primary);
+        }
+        
+        .footer-logo-icon i {
+            display: none;
+        }
+
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-meshur {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-gulun-yeri {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-gulun-yeri {
+                font-size: 3rem;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-side {
+                display: none;
+            }
+
+            .hero-promo-banner {
+                margin-left: 1rem;
+                margin-right: 1rem;
+                padding: 0.85rem 1rem;
+            }
+            .hero-promo-title {
+                font-size: 0.95rem;
+            }
+            .hero-promo-icons {
+                gap: 0.75rem 1rem;
+            }
+            .hero-promo-icons span {
+                font-size: 0.75rem;
+            }
+
+            .location-info {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 400px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-gulun-yeri {
+                font-size: 2.5rem;
+            }
+
+            .hero-gulun-yeri::before,
+            .hero-gulun-yeri::after {
+                display: none;
+            }
+
+            .hero-donerci {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                max-width: none;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .order-platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-gulun-yeri {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-container">
+                    <div class="logo-main">
+                        <div class="logo-icon">
+                            <i class="fas fa-drumstick-bite"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-meshur">MEŞHUR DÖNERCİ</span>
+                            <span class="logo-gulun-yeri">Gül'ün Yeri</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#anasayfa">Ana Sayfa</a></li>
+                <li><a href="#urunler">Ürünler</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#konum">Konum</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+            <div class="nav-cta">
+                <div class="nav-siparis-wrap" id="navSiparisWrap">
+                    <button type="button" class="btn btn-primary nav-siparis-btn" onclick="toggleSiparisDropdown(event)" aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-shopping-bag"></i> Sipariş Ver
+                    </button>
+                    <div class="nav-siparis-dropdown" id="navSiparisDropdown">
+                        <a href="https://yemek.go.link/fFmfZ" target="_blank" rel="noopener" class="nav-siparis-option nav-siparis-yemeksepeti">
+                            <img src="https://logo.clearbit.com/yemeksepeti.com" alt="" class="nav-siparis-logo" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='inline-block';">
+                            <i class="fas fa-utensils nav-siparis-fallback" style="display:none;"></i>
+                            <span>Yemek Sepeti</span>
+                        </a>
+                        <a href="https://getir.com/yemek" target="_blank" rel="noopener" class="nav-siparis-option nav-siparis-getir">
+                            <img src="https://logo.clearbit.com/getir.com" alt="" class="nav-siparis-logo" onerror="this.style.display='none';var n=this.nextElementSibling;if(n)n.style.display='inline-block';">
+                            <i class="fas fa-motorcycle nav-siparis-fallback" style="display:none;"></i>
+                            <span>Getir Yemek</span>
+                        </a>
+                        <a href="tel:+905456700386" class="nav-siparis-option nav-siparis-telefon">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Telefonla Ara</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#anasayfa" onclick="toggleMobileMenu()">Ana Sayfa</a>
+        <a href="#urunler" onclick="toggleMobileMenu()">Ürünler</a>
+        <a href="#hakkimizda" onclick="toggleMobileMenu()">Hakkımızda</a>
+        <a href="#konum" onclick="toggleMobileMenu()">Konum</a>
+        <a href="#iletisim" onclick="toggleMobileMenu()">İletişim</a>
+        <a href="#siparis" class="btn btn-primary" onclick="toggleMobileMenu()">Sipariş Ver</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="anasayfa">
+        <div class="hero-inner">
+            <a href="#urunler" class="hero-side hero-side-left" aria-label="Tavuk İskender kampanyası"></a>
+            <div class="hero-container">
+            <div class="hero-logo-wrap">
+                <a href="#siparis" class="hero-logo-cta hero-logo-cta-siparis">
+                    <i class="fas fa-shopping-bag"></i> Sipariş Ver
+                </a>
+                <a href="tel:+905456700386" class="hero-logo-cta hero-logo-cta-ara">
+                    <i class="fas fa-phone-alt"></i> Hemen Ara
+                </a>
+                <div class="hero-logo">
+                    <div class="hero-logo-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="hero-logo-text">
+                        <span class="hero-meshur">MEŞHUR DÖNERCİ</span>
+                        <div class="hero-divider"></div>
+                        <span class="hero-gulun-yeri">Gül'ün Yeri</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-promo-banner">
+                <p class="hero-promo-title">Menderes'in lezzet adresi</p>
+                <div class="hero-promo-icons">
+                    <span><i class="fas fa-drumstick-bite"></i> Döner</span>
+                    <span><i class="fas fa-fish"></i> Midye</span>
+                    <span><i class="fas fa-coffee"></i> Çay & Kahve</span>
+                    <span><i class="fas fa-seedling"></i> Kestane</span>
+                </div>
+                <div class="hero-promo-tags">
+                    <span class="tag">Taze malzeme</span>
+                    <span class="tag">Hızlı servis</span>
+                    <span class="tag">Uygun fiyat</span>
+                    <span class="tag">Paket servis</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#urunler" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> Menüyü İncele
+                </a>
+                <a href="#konum" class="btn btn-outline" style="border-color: #fff; color: #fff;">
+                    <i class="fas fa-map-marker-alt"></i> Yol Tarifi Al
+                </a>
+            </div>
+            </div>
+            <a href="#urunler" class="hero-side hero-side-right" aria-label="Pilav Üstü Döner kampanyası"></a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="urunler">
+        <div class="section-header">
+            <span class="section-tag">Menümüz</span>
+            <h2 class="section-title">Lezzetli Ürünlerimiz</h2>
+            <p class="section-subtitle">Taze malzemeler ve özel tariflerle hazırlanan birbirinden lezzetli ürünler</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Tavuk Döner Çeşitleri -->
+            <div class="category-section fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-drumstick-bite"></i>
+                    Tavuk Döner Çeşitleri
+                </h3>
+                <div class="products-row">
+                    <!-- Tavuk İskender -->
+                    <div class="product-card">
+                        <span class="product-badge popular">En Çok Satan</span>
+                        <img src="assets/iskender.jpg" alt="Tavuk İskender" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Tavuk İskender</h4>
+                            <p class="product-description">Özel soslu, tereyağlı, yoğurtlu muhteşem lezzet. Pide üzerinde servis edilir.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Porsiyon</span>
+                                <span class="variant-tag">1.5 Porsiyon</span>
+                                <span class="variant-tag">2 Porsiyon</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺120 <span>/ porsiyon</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pilav Üstü Tavuk Döner -->
+                    <div class="product-card">
+                        <span class="product-badge">Favori</span>
+                        <img src="assets/plate.jpg" alt="Pilav Üstü Döner" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Pilav Üstü Tavuk Döner</h4>
+                            <p class="product-description">Tereyağlı pilav üzerine bol döner, yanında salata ile servis.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Normal</span>
+                                <span class="variant-tag">Bol Et</span>
+                                <span class="variant-tag">Ekstra Pilav</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺95 <span>/ porsiyon</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dürüm Döner -->
+                    <div class="product-card">
+                        <span class="product-badge new">Lezzetli</span>
+                        <img src="assets/durum.jpg" alt="Dürüm Döner" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Dürüm Tavuk Döner</h4>
+                            <p class="product-description">İnce lavaş içinde döner, domates, soğan, maydanoz ve özel sos.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Tek Dürüm</span>
+                                <span class="variant-tag">1.5 Dürüm</span>
+                                <span class="variant-tag">Çift Dürüm</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺75 <span>/ adet</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yarım Ekmek Döner -->
+                    <div class="product-card">
+                        <img src="assets/sandwich.jpg" alt="Yarım Ekmek Döner" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Ekmek Arası Tavuk Döner</h4>
+                            <p class="product-description">Taze somun ekmek içinde döner, yeşillik ve özel soslarla.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Yarım Ekmek</span>
+                                <span class="variant-tag">Tam Ekmek</span>
+                                <span class="variant-tag">3 Parça</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺55 <span>/ yarım</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombik Döner -->
+                    <div class="product-card">
+                        <img src="assets/tombik.jpg" alt="Tombik Döner" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Tombik Tavuk Döner</h4>
+                            <p class="product-description">Yumuşak tombik ekmek içinde bol döner, taze sebzeler.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Normal</span>
+                                <span class="variant-tag">Bol Malzeme</span>
+                                <span class="variant-tag">Kaşarlı</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺70 <span>/ adet</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Porsiyon Döner -->
+                    <div class="product-card">
+                        <img src="assets/porsiyon.jpg" alt="Porsiyon Döner" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Porsiyon Tavuk Döner</h4>
+                            <p class="product-description">Tabakta döner et, yanında pilav, salata ve turşu ile.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Tek Porsiyon</span>
+                                <span class="variant-tag">1.5 Porsiyon</span>
+                                <span class="variant-tag">Aile Boy</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺110 <span>/ porsiyon</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Midye -->
+            <div class="category-section fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-fish"></i>
+                    Midye Dolma
+                </h3>
+                <div class="products-row">
+                    <div class="product-card">
+                        <span class="product-badge">Spesiyal</span>
+                        <img src="assets/midye-dolma.jpg" alt="Midye Dolma" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Midye Dolma</h4>
+                            <p class="product-description">Taze midye içinde baharatlı pirinç dolma, limonlu servis.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">5'li</span>
+                                <span class="variant-tag">10'lu</span>
+                                <span class="variant-tag">15'li</span>
+                                <span class="variant-tag">20'li</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺50 <span>/ 10'lu</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="assets/midye-tava.jpg" alt="Midye Tava" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Midye Tava</h4>
+                            <p class="product-description">Çıtır çıtır kızartılmış midye, tarator sos ile.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Porsiyon</span>
+                                <span class="variant-tag">Büyük Porsiyon</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺80 <span>/ porsiyon</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Çay, Kahve, Kestane -->
+            <div class="category-section fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-mug-hot"></i>
+                    Çay, Kahve & Kestane
+                </h3>
+                <div class="products-row">
+                    <!-- Çay -->
+                    <div class="product-card">
+                        <img src="assets/cay.jpg" alt="Türk Çayı" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Türk Çayı</h4>
+                            <p class="product-description">Demli, mis gibi geleneksel Türk çayı. İnce belli bardakta.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Tek</span>
+                                <span class="variant-tag">Çift</span>
+                                <span class="variant-tag">Demlik</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺10 <span>/ bardak</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Türk Kahvesi -->
+                    <div class="product-card">
+                        <span class="product-badge">Klasik</span>
+                        <img src="assets/kahve.jpg" alt="Türk Kahvesi" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Türk Kahvesi</h4>
+                            <p class="product-description">Geleneksel usul pişirilmiş Türk kahvesi, lokumlu servis.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Sade</span>
+                                <span class="variant-tag">Az Şekerli</span>
+                                <span class="variant-tag">Orta</span>
+                                <span class="variant-tag">Şekerli</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺25 <span>/ fincan</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kestane Kebap -->
+                    <div class="product-card">
+                        <span class="product-badge new">Mevsimlik</span>
+                        <img src="assets/kestane.jpg" alt="Kestane Kebap" class="product-image">
+                        <div class="product-content">
+                            <h4 class="product-name">Kestane Kebap</h4>
+                            <p class="product-description">Közde pişmiş sıcak kestane. Kış aylarının vazgeçilmezi.</p>
+                            <div class="product-variants">
+                                <span class="variant-tag">Küçük Paket</span>
+                                <span class="variant-tag">Orta Paket</span>
+                                <span class="variant-tag">Büyük Paket</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">₺30 <span>/ paket</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- (Sadece istenen ürünler: çay, kahve, kestane) -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="hakkimizda">
+        <div class="about-container">
+            <div class="about-images about-images-overlap">
+                <div class="about-overlap-box about-overlap-1">
+                    <img src="assets/iskender.jpg" alt="Tavuk İskender">
+                </div>
+                <div class="about-overlap-box about-overlap-2">
+                    <img src="assets/plate.jpg" alt="Pilav Üstü Döner">
+                </div>
+                <div class="about-overlap-box about-overlap-3">
+                    <img src="assets/durum.jpg" alt="Dürüm Döner">
+                </div>
+                <div class="about-overlap-box about-overlap-4">
+                    <img src="assets/midye-dolma.jpg" alt="Midye Dolma">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-title-wrap">
+                    <span class="section-tag">Hakkımızda</span>
+                    <h2 class="section-title">Lezzetin Adresi<br>Menderes'te</h2>
+                </div>
+                <p class="section-subtitle" style="text-align: left; margin: 1rem 0;">
+                    Yıllardır İzmir Menderes'te döner ustası olarak hizmet veriyoruz. 
+                    Tavuk döner, midye dolma, çay, kahve ve kestane... 
+                    Taze malzemeler, geleneksel tarifler ve müşteri memnuniyeti bizim önceliğimizdir.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>Taze Malzeme</h4>
+                            <p>Her gün taze et ve malzemeler</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>Özel Tarif</h4>
+                            <p>Nesilden nesile aktarılan lezzet</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>Hızlı Servis</h4>
+                            <p>Siparişiniz dakikalar içinde</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>Müşteri Odaklı</h4>
+                            <p>Memnuniyetiniz bizim için önemli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order" id="siparis">
+        <div class="order-container">
+            <span class="section-tag">Online Sipariş</span>
+            <h2 class="section-title">Hemen Sipariş Ver!</h2>
+            <p class="section-subtitle">Lezzetli dönerlerimizi evinize getiriyoruz. Online sipariş verin, kapınıza gelsin!</p>
+            
+            <div class="order-platforms">
+                <a href="https://yemek.go.link/fFmfZ" target="_blank" class="platform-card">
+                    <div class="platform-icon yemeksepeti">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <span class="platform-name">Yemek Sepeti</span>
+                    <span class="platform-desc">Hızlı teslimat</span>
+                </a>
+                
+                <a href="https://getir.com" target="_blank" class="platform-card">
+                    <div class="platform-icon getir">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <span class="platform-name">Getir Yemek</span>
+                    <span class="platform-desc">Dakikalar içinde</span>
+                </a>
+                
+                <a href="tel:+905456700386" class="platform-card">
+                    <div class="platform-icon phone">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <span class="platform-name">Telefonla Ara</span>
+                    <span class="platform-desc">Direkt sipariş</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="konum">
+        <div class="section-header">
+            <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--primary);">Konum</span>
+            <h2 class="section-title">Bizi Ziyaret Edin</h2>
+            <p class="section-subtitle">İzmir Menderes'te sizi bekliyoruz. Kolayca ulaşın!</p>
+        </div>
+        
+        <div class="location-container">
+            <div class="location-info">
+                <div class="location-card">
+                    <div class="location-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="location-card-title">Adresimiz</h3>
+                    <p class="location-card-text">
+                        Cüneytbey, Ürüncü Sk. No:1/C<br>
+                        35470 Menderes / İZMİR<br>
+                        (Migros Karşısı)
+                    </p>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="location-card-title">Çalışma Saatleri</h3>
+                    <p class="location-card-text">
+                        Pazartesi - Cumartesi: 10:00 - 23:00<br>
+                        Pazar: 11:00 - 22:00
+                    </p>
+                </div>
+
+                <div class="location-buttons">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Cüneytbey,+Ürüncü+Sk.+No:1/C,+35470+Menderes,+İzmir" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-google"></i> Google Maps
+                    </a>
+                    <a href="https://maps.apple.com/?daddr=Cüneytbey,+Ürüncü+Sk.+No:1/C,+35470+Menderes,+İzmir" target="_blank" class="btn btn-outline" style="border-color: #fff; color: #fff;">
+                        <i class="fab fa-apple"></i> Apple Maps
+                    </a>
+                    <a href="https://yandex.com.tr/maps/?rtext=~Cüneytbey,+Ürüncü+Sk.+No:1/C,+Menderes,+İzmir" target="_blank" class="btn btn-outline" style="border-color: #fff; color: #fff;">
+                        <i class="fas fa-map"></i> Yandex Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-fullwidth">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.5!2d27.1344!3d38.2539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862c5555555%3A0x5555555555555555!2sC%C3%BCneytbey%2C%20%C3%9Cr%C3%BCnc%C3%BC%20Sk.%20No%3A1%2FC%2C%2035470%20Menderes%2F%C4%B0zmir!5e0!3m2!1str!2str!4v1706500000000!5m2!1str!2str"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="iletisim">
+        <div class="section-header">
+            <span class="section-tag">İletişim</span>
+            <h2 class="section-title">Bize Ulaşın</h2>
+            <p class="section-subtitle">Sorularınız için her zaman yanınızdayız</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+905456700386">0545 670 03 86</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/905456700386">0545 670 03 86</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p><a href="https://instagram.com/meshur_corbaci" target="_blank">@meshur_corbaci</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-main">
+                            <div class="footer-logo-icon">
+                                <i class="fas fa-drumstick-bite"></i>
+                            </div>
+                            <div class="footer-logo-text">
+                                <span class="footer-meshur">MEŞHUR DÖNERCİ</span>
+                                <span class="footer-gulun-yeri">Gül'ün Yeri</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>İzmir Menderes'in lezzet durağı. Tavuk döner, midye, çay, kahve ve kestane... Geleneksel tatlar, samimi ortam.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/meshur_corbaci" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/905456700386" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#urunler">Menü</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#konum">Konum</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Ürünler</h4>
+                    <ul>
+                        <li><a href="#urunler">Tavuk Döner</a></li>
+                        <li><a href="#urunler">Midye Dolma</a></li>
+                        <li><a href="#urunler">Çay & Kahve</a></li>
+                        <li><a href="#urunler">Kestane</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><a href="tel:+905456700386">0545 670 03 86</a></li>
+                        <li><a href="#konum">Cüneytbey, Menderes/İzmir</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Meşhur Dönerci - Gül'ün Yeri. Tüm hakları saklıdır.</p>
+                <p>İzmir Menderes'in Lezzet Durağı</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/905456700386?text=Merhaba,%20sipariş%20vermek%20istiyorum" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Sipariş Ver dropdown toggle
+        function toggleSiparisDropdown(e) {
+            e.stopPropagation();
+            const wrap = document.getElementById('navSiparisWrap');
+            wrap.classList.toggle('open');
+            const btn = wrap.querySelector('.nav-siparis-btn');
+            btn.setAttribute('aria-expanded', wrap.classList.contains('open'));
+        }
+
+        document.addEventListener('click', function() {
+            const wrap = document.getElementById('navSiparisWrap');
+            if (wrap) {
+                wrap.classList.remove('open');
+                wrap.querySelector('.nav-siparis-btn')?.setAttribute('aria-expanded', 'false');
+            }
+        });
+        document.getElementById('navSiparisWrap')?.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Add some interactivity to product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
