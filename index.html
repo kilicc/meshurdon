@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meşhur Dönerci - Gül'ün Yeri | İzmir Menderes</title>
+    <title>Meşhur Dönerci Menderes - Gül'ün Mutfağı Restaurant | İzmir Menderes</title>
     <meta name="description" content="İzmir Menderes'in en lezzetli tavuk döneri. Tavuk İskender, Dürüm Döner, Pilav Üstü Döner, Midye, Çay, Kahve, Kestane. Yemek Sepeti'nden sipariş verin!">
     <meta name="keywords" content="döner, tavuk döner, iskender, menderes, izmir, midye, çay, kahve, kestane">
     
@@ -115,7 +115,7 @@
 
         .logo-gulun-yeri {
             font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
+            font-size: clamp(1.15rem, 2.2vw, 1.5rem);
             font-weight: 700;
             background: var(--gradient-rose);
             -webkit-background-clip: text;
@@ -123,6 +123,9 @@
             background-clip: text;
             position: relative;
             text-shadow: none;
+            max-width: 260px;
+            white-space: normal;
+            line-height: 1.05;
         }
 
         .logo-gulun-yeri::after {
@@ -250,12 +253,16 @@
         }
 
         .hero-meshur {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.9);
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
+            display: block;
+            max-width: 920px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-donerci {
@@ -268,7 +275,7 @@
 
         .hero-gulun-yeri {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
             font-weight: 700;
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 30%, #FF6B00 60%, #E91E63 100%);
             -webkit-background-clip: text;
@@ -278,6 +285,9 @@
             display: inline-block;
             animation: glow-text 2s ease-in-out infinite alternate;
             filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.5));
+            max-width: 920px;
+            white-space: normal;
+            line-height: 1.05;
         }
 
         @keyframes glow-text {
@@ -285,24 +295,10 @@
             100% { filter: drop-shadow(0 0 30px rgba(233, 30, 99, 0.6)); }
         }
 
-        .hero-gulun-yeri::before {
-            content: '✿';
-            position: absolute;
-            left: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            -webkit-text-fill-color: #E91E63;
-        }
-
+        .hero-gulun-yeri::before,
         .hero-gulun-yeri::after {
-            content: '✿';
-            position: absolute;
-            right: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            -webkit-text-fill-color: #E91E63;
+            display: none;
+            content: none;
         }
 
         .hero-divider {
@@ -1829,8 +1825,8 @@
                             <i class="fas fa-drumstick-bite"></i>
                         </div>
                         <div class="logo-text">
-                            <span class="logo-meshur">MEŞHUR DÖNERCİ</span>
-                            <span class="logo-gulun-yeri">Gül'ün Yeri</span>
+                            <span class="logo-meshur">MEŞHUR DÖNERCİ MENDERES</span>
+                            <span class="logo-gulun-yeri">Gül'ün Mutfağı Restaurant</span>
                         </div>
                     </div>
                 </div>
@@ -1906,9 +1902,9 @@
                         <i class="fas fa-drumstick-bite"></i>
                     </div>
                     <div class="hero-logo-text">
-                        <span class="hero-meshur">MEŞHUR DÖNERCİ</span>
+                        <span class="hero-meshur">MEŞHUR DÖNERCİ MENDERES</span>
                         <div class="hero-divider"></div>
-                        <span class="hero-gulun-yeri">Gül'ün Yeri</span>
+                        <span class="hero-gulun-yeri">Gül'ün Mutfağı Restaurant</span>
                     </div>
                 </div>
             </div>
@@ -2405,8 +2401,8 @@
                                 <i class="fas fa-drumstick-bite"></i>
                             </div>
                             <div class="footer-logo-text">
-                                <span class="footer-meshur">MEŞHUR DÖNERCİ</span>
-                                <span class="footer-gulun-yeri">Gül'ün Yeri</span>
+                                <span class="footer-meshur">MEŞHUR DÖNERCİ MENDERES</span>
+                                <span class="footer-gulun-yeri">Gül'ün Mutfağı Restaurant</span>
                             </div>
                         </div>
                     </div>
@@ -2448,7 +2444,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Meşhur Dönerci - Gül'ün Yeri. Tüm hakları saklıdır.</p>
+                <p>&copy; 2024 Meşhur Dönerci Menderes - Gül'ün Mutfağı Restaurant. Tüm hakları saklıdır.</p>
                 <p>İzmir Menderes'in Lezzet Durağı</p>
             </div>
         </div>
