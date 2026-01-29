@@ -709,6 +709,66 @@
             flex-shrink: 0;
         }
 
+        .hero-order-round {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .hero-order-round a {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            padding: 0 0.25rem;
+        }
+
+        .hero-order-round a:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        }
+
+        .hero-order-round a i {
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-order-round .hero-round-yemeksepeti {
+            background: linear-gradient(135deg, #C41E5A 0%, #E91E63 100%);
+        }
+
+        .hero-order-round .hero-round-getir {
+            background: linear-gradient(135deg, #5D3FD3 0%, #7C3AED 100%);
+        }
+
+        .hero-order-round .hero-round-telefon {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        @media (max-width: 480px) {
+            .hero-order-round a {
+                width: 64px;
+                height: 64px;
+                font-size: 0.6rem;
+            }
+            .hero-order-round a i {
+                font-size: 1.2rem;
+            }
+        }
+
         .hero-promo-banner {
             margin: 1.5rem auto 2rem;
             max-width: 520px;
@@ -1846,6 +1906,21 @@
                         <span class="hero-gulun-yeri">Gül'ün Yeri</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="hero-order-round">
+                <a href="https://yemek.go.link/fFmfZ" target="_blank" rel="noopener" class="hero-round-yemeksepeti" aria-label="Yemek Sepeti ile sipariş ver">
+                    <i class="fas fa-utensils"></i>
+                    <span>Yemek Sepeti</span>
+                </a>
+                <a href="https://getir.com/yemek" target="_blank" rel="noopener" class="hero-round-getir" aria-label="Getir Yemek ile sipariş ver">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Getir Yemek</span>
+                </a>
+                <a href="tel:+905456700386" class="hero-round-telefon" aria-label="Telefonla sipariş ver">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Telefonla Sipariş</span>
+                </a>
             </div>
 
             <div class="hero-promo-banner">
