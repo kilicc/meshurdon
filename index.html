@@ -644,6 +644,27 @@
             background-position: center center;
         }
 
+        .hero-side-kokorec-thumb {
+            position: absolute;
+            top: 14px;
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 0 28px rgba(255, 120, 0, 0.35);
+            animation: kokorec-thumb-pulse 2.8s ease-in-out infinite;
+        }
+
+        .hero-side-left .hero-side-kokorec-thumb { left: 14px; }
+        .hero-side-right .hero-side-kokorec-thumb { right: 14px; }
+
+        @keyframes kokorec-thumb-pulse {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.04); filter: brightness(1.08); }
+        }
+
         .hero-side .hero-banner-content {
             position: absolute;
             left: 50%;
@@ -1884,6 +1905,7 @@
     <section class="hero" id="anasayfa">
         <div class="hero-inner">
             <a href="#urunler" class="hero-side hero-side-left" aria-label="Tavuk İskender kampanyası">
+                <img src="assets/kokorec.jpg" alt="Kokoreç" class="hero-side-kokorec-thumb">
                 <div class="hero-banner-content">
                     <div class="hero-banner-title">Tavuk İskender</div>
                     <div class="hero-banner-desc">Özel soslu, tereyağlı lezzet. Menüde sizi bekliyor.</div>
@@ -1951,6 +1973,7 @@
             </div>
             </div>
             <a href="#urunler" class="hero-side hero-side-right" aria-label="Pilav Üstü Döner kampanyası">
+                <img src="assets/kokorec.jpg" alt="Kokoreç" class="hero-side-kokorec-thumb">
                 <div class="hero-banner-content">
                     <div class="hero-banner-title">Pilav Üstü Döner</div>
                     <div class="hero-banner-desc">Tereyağlı pilav, bol döner. Hemen tadın.</div>
